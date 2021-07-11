@@ -1,8 +1,8 @@
 ## Local setup
 
 ```zsh
-git clone git@github.com:lmatuzic/q-react-task.git
-cd q-react-task
+git@github.com:lmatuzic/cmg-react-task.git
+cd cmg-react-task
 npm install # install packages and dependencies
 npm start # start server
 --------------------------------------------------------------
