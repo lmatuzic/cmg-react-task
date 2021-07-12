@@ -1,0 +1,59 @@
+table { 
+	width: 100%; 
+	border-collapse: collapse; 
+  margin-bottom: 5rem;
+
+  tr:nth-of-type(odd) { 
+    background: #eee; 
+  }
+
+  th { 
+    background: #3498db; 
+    color: white; 
+    font-weight: bold; 
+  }
+
+  td, th { 
+    padding: 1rem; 
+    border: 1px solid #ccc; 
+    text-align: left; 
+  }
+}
+
+
+@media only screen and (max-width: 800px) {
+  table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+
+	table { 
+	  width: 100%; 
+    margin-bottom: 3rem;
+
+    thead {
+      tr { 
+        position: absolute;
+        visibility: hidden;
+      }
+    } 
+
+    tr { 
+      border: 1px solid #ccc; 
+    }
+
+    td { 
+      border: none;
+      position: relative;
+      padding-left: 50%; 
+
+      &:before {
+        position: absolute;
+        content: attr(data-column);
+        left: 1rem;
+        width: 35%; 
+        color: #000;
+        font-weight: bold;
+      }
+    }
+	}
+}
