@@ -1,3 +1,82 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 5rem;
+}
+table tr:nth-of-type(odd) {
+  background: #eee;
+}
+table th {
+  background: #3498db;
+  color: white;
+  font-weight: bold;
+}
+table td, table th {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+@media only screen and (max-width: 800px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  table {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  table thead tr {
+    position: absolute;
+    visibility: hidden;
+  }
+  table tr {
+    border: 1px solid #ccc;
+  }
+  table td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+  }
+  table td:before {
+    position: absolute;
+    content: attr(data-column);
+    left: 1rem;
+    width: 35%;
+    color: #000;
+    font-weight: bold;
+  }
+}
+html {
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comfortaa", cursive;
+}
+
+.container {
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 800px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 940px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1150px;
+  }
 }

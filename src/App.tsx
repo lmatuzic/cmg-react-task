@@ -1,11 +1,29 @@
+import { FC, useState, useEffect } from 'react'; 
 import './stylesheets/scss/global.scss';
+import CharacterTable from './components/CharacterTable';
+import { CharacterType } from './types';
 
-function App() {
+
+const App: FC = () => {
+  const [characters, setCharacters] = useState<CharacterType[]>([]);
+  const charactersURL = "https://www.anapioficeandfire.com/api/characters?pageSize=50";
+
+  useEffect(() => {
+    const fetchCharacters = async () => {
+      const response = await fetch(charactersURL);
+      const data = await response.json();
+      setCharacters(data);
+      console.log(data);
+    }
+
+    fetchCharacters();
+  }, []);
+
   return (
     <div className="App">
-      <h1>Home</h1>
+      <CharacterTable characters={characters} />
     </div>
-  );
+  )
 }
 
 export default App;
