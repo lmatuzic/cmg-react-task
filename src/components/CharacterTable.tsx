@@ -49,8 +49,8 @@ const CharacterTable: FC<CharacterProps> = ({ characters }) => {
                   <td data-column="Allegiances">
                     <div>
                       {
-                        character.allegiances.length < 1 ? "None" : character.allegiances.map(allegiance => (
-                          <div>{allegiance}</div>
+                        character.allegiances.length < 1 ? "None" : character.allegiances.map((allegiance, index) => (
+                          <div key={index}>{allegiance}</div>
                         ))
                       }
                     </div>
