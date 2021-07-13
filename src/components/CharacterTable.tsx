@@ -1,15 +1,20 @@
 import { FC } from 'react';
-import { CharacterType } from '../types';
+import { CharacterType, HouseType } from '../types';
+import Character from '../components/Character';
 
 type CharacterProps = {
   characters: CharacterType[];
+  houses: HouseType[];
 }
 
-const CharacterTable: FC<CharacterProps> = ({ characters }) => {
+const CharacterTable: FC<CharacterProps> = ({ characters, houses }) => {
   return (
     <div className="characters__table">
       <div className="container">
         <h1>Character table</h1>
+        {
+          houses.map(house => console.log(house))
+        }
 
         <table>
           <thead>
@@ -26,40 +31,10 @@ const CharacterTable: FC<CharacterProps> = ({ characters }) => {
           <tbody>
             {
               characters.map((character, index) => (
-                <tr key={index}>
-                  <td data-column="Character"> 
-                    <span className="character__name">{character.name}</span>
-                    <span className="character__aliases">{character.aliases}</span>
-                  </td>
-
-                  <td data-column="Alive">
-                    {`${character.born === "" ? "Born: Unknown" : "Born: " + character.born}`}
-                    <br />
-                    {`${character.died === "" ? "Died: Unknown" : "Died: " + character.died}`}
-                  </td>
-
-                  <td data-column="Gender">
-                    {`${character.gender === "" ? "Unknown" : character.gender}`}
-                  </td>
-
-                  <td data-column="Culture">
-                    {`${character.culture === "" ? "Unknown" : character.culture}`}
-                  </td>
-
-                  <td data-column="Allegiances">
-                    <div>
-                      {
-                        character.allegiances.length < 1 ? "None" : character.allegiances.map((allegiance, index) => (
-                          <div key={index}>{allegiance}</div>
-                        ))
-                      }
-                    </div>
-                  </td>
-
-                  <td data-column="# of Books"> 
-                    {character.books.length}
-                  </td>
-                </tr>
+                <Character 
+                  key={index}
+                  character={character}
+                />
               ))
             }
           </tbody>

@@ -1,9 +1,21 @@
-import React from 'react'
+import { FC } from 'react';
+import { HouseType } from "../types";
 
-const HouseTable = () => {
+type HouseProps = {
+  houses: HouseType[];
+}
+
+const HouseTable: FC<HouseProps> = ({ houses }) => {
   return (
-    <div>
-      <h1>House table</h1>
+    <div className="houses">
+      <div className="container">
+        <h1>House table</h1>
+        {
+          houses.map(house => (
+            <div>{house.name}</div>
+          ))
+        }
+      </div>
     </div>
   )
 }
