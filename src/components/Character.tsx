@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 import { SingleCharacterProps } from '../types';
 
 const Character: FC<SingleCharacterProps> = ({ character }) => {
@@ -10,26 +11,26 @@ const Character: FC<SingleCharacterProps> = ({ character }) => {
       </td>
 
       <td data-column="Alive">
-        {`${(character.born === "") ? "Born: Unknown" : "Born: " + character.born.replace(/[^0-9]/g, '')}`}
+        {(character.born === "") ? "Born: Unknown" : "Born: " + character.born.replace(/[^0-9]/g, '')}
         <br />
-        {`${character.died === "" ? "Died: Unknown" : "Died: " + character.died.replace(/[^0-9]/g, '')}`}
+        {character.died === "" ? "Died: Unknown" : "Died: " + character.died.replace(/[^0-9]/g, '')}
         <br />
       </td>
 
       <td data-column="Gender">
-        {`${character.gender === "" ? "Unknown" : character.gender}`}
+        {character.gender === "" ? "Unknown" : character.gender}
       </td>
 
       <td data-column="Culture">
-        {`${character.culture === "" ? "Unknown" : character.culture}`}
+        {character.culture === "" ? "Unknown" : character.culture}
       </td>
 
       <td data-column="Allegiances">
         {
           character.allegiances.length < 1 ? "None" : character.allegiances.map((allegiance, index) => (
-            <span key={index}>
+            <Link to={`/houses/${allegiance.substring(allegiance.lastIndexOf('/') + 1)}`} key={index}>
               {allegiance.substring(allegiance.lastIndexOf('/') + 1)}
-            </span>
+            </Link>
           ))
         }
       </td>

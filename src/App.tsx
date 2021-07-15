@@ -2,20 +2,20 @@ import { FC, useState, useEffect } from 'react';
 import './stylesheets/scss/global.scss';
 import { Switch, Route } from "react-router-dom";
 import CharacterTable from './components/CharacterTable';
-import HouseTable from './components/HouseTable';
-import { CharacterType, HouseType } from './types';
+import HouseDetails from './components/HouseDetails';
+import { ICharacter, IHouse } from './types';
 import { PulseLoader } from 'react-spinners';
 import { css } from '@emotion/react';
 
-const loaderCSS = css`
+export const loaderCSS = css`
   display: flex;
   justify-content: center;
   width: 100%;
   margin-top: 3rem;
 `
 const App: FC = () => {
-  const [characters, setCharacters] = useState<CharacterType[]>([]);
-  const [houses, setHouses] = useState<HouseType[]>([]);
+  const [characters, setCharacters] = useState<ICharacter[]>([]);
+  const [houses, setHouses] = useState<IHouse[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const charactersURL = "https://www.anapioficeandfire.com/api/characters?pageSize=50";
   const housesURL = "https://www.anapioficeandfire.com/api/houses?pageSize=50";
@@ -65,10 +65,8 @@ const App: FC = () => {
                   />
                 </Route>
       
-                <Route path="/houses">
-                  <HouseTable
-                    houses={houses}
-                  />
+                <Route path="/houses/:id">
+                  <HouseDetails />
                 </Route>
               </Switch>
             </main>
