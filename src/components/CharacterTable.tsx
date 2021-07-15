@@ -12,9 +12,9 @@ const CharacterTable: FC<CharacterProps> = ({ characters, houses }) => {
     <div className="characters__table">
       <div className="container">
         <h1>Character table</h1>
-        {
+        {/* {
           houses.map(house => console.log(house))
-        }
+        } */}
 
         <table>
           <thead>

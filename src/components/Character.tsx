@@ -14,9 +14,10 @@ const Character: FC<CharacterProps> = ({ character }) => {
       </td>
 
       <td data-column="Alive">
-        {`${character.born === "" ? "Born: Unknown" : "Born: " + character.born}`}
+        {`${(character.born === "") ? "Born: Unknown" : "Born: " + character.born.replace(/[^0-9]/g, '')}`}
         <br />
-        {`${character.died === "" ? "Died: Unknown" : "Died: " + character.died}`}
+        {`${character.died === "" ? "Died: Unknown" : "Died: " + character.died.replace(/[^0-9]/g, '')}`}
+        <br />
       </td>
 
       <td data-column="Gender">
