@@ -2,7 +2,7 @@ import { FC, useState, useEffect } from 'react';
 import './stylesheets/scss/global.scss';
 import { Switch, Route } from "react-router-dom";
 import CharacterTable from './components/CharacterTable';
-import HouseDetails from './components/HouseDetails';
+import House from './components/House';
 import { ICharacter, IHouse } from './types';
 import { PulseLoader } from 'react-spinners';
 import { css } from '@emotion/react';
@@ -66,7 +66,7 @@ const App: FC = () => {
                 </Route>
       
                 <Route path="/houses/:id">
-                  <HouseDetails />
+                  <House />
                 </Route>
               </Switch>
             </main>

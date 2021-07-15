@@ -1,3 +1,5 @@
+@use './colors' as color;
+
 table { 
 	width: 100%; 
 	border-collapse: collapse; 
@@ -8,8 +10,8 @@ table {
   }
 
   th { 
-    background: #3498db; 
-    color: white; 
+    background: color.$blue; 
+    color: color.$white; 
     font-weight: bold; 
   }
 
@@ -24,13 +26,18 @@ table {
       display: block;
       text-decoration: none;
       margin-bottom: 0.5rem;
+      transition: color 0.25s ease;
 
       &:last-child {
         margin-bottom: 0;
       }
 
       &:visited {
-        color: blue;
+        color: color.$blue;
+      }
+
+      &:hover {
+        color: darken($color: color.$blue, $amount: 15%);
       }
     }
   }
@@ -66,7 +73,7 @@ table {
         content: attr(data-column);
         left: 1rem;
         width: 35%; 
-        color: #000;
+        color: color.$black;
         font-weight: bold;
       }
     }
