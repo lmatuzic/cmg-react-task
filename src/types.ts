@@ -37,3 +37,12 @@ export type HouseType = {
   cadetBranches: string;
   swornMembers: string;
 }
+
+export type CharacterProps = {
+  characters: CharacterType[];
+  houses: HouseType[];
+}
+
+export type SingleCharacterProps = {
+  character: CharacterType;
+}

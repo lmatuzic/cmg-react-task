@@ -33,7 +33,7 @@ const App: FC = () => {
         setCharacters(charactersData);
         setHouses(housesData);
       } catch(err) {
-        console.log(err.message);
+        console.log(err.message); 
       } finally {
         setIsLoading(false);
       }
@@ -49,26 +49,31 @@ const App: FC = () => {
   return (
     <>
       {
-        isLoading ? <PulseLoader size={14} css={loaderCSS} color='#3498db' /> :
-        <div className="App">
-          <main className="content">
-            <Switch>
-              <Route exact path="/">
-                <CharacterTable 
-                  characters={characters} 
-                  houses={houses}
-                />
-              </Route>
-    
-              <Route path="/houses">
-                <HouseTable
-                  houses={houses}
-                />
-              </Route>
-            </Switch>
-          </main>
-        </div>
-      }
+        isLoading ? 
+          <PulseLoader 
+            size={14} 
+            css={loaderCSS} 
+            color='#3498db' 
+          /> :
+          <div className="App">
+            <main className="content">
+              <Switch>
+                <Route exact path="/">
+                  <CharacterTable 
+                    characters={characters} 
+                    houses={houses}
+                  />
+                </Route>
+      
+                <Route path="/houses">
+                  <HouseTable
+                    houses={houses}
+                  />
+                </Route>
+              </Switch>
+            </main>
+          </div>
+        }
     </>
   )
 }

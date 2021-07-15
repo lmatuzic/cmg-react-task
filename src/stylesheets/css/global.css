@@ -2,7 +2,7 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 5rem;
+  margin: 5rem 0;
 }
 table tr:nth-of-type(odd) {
   background: #eee;

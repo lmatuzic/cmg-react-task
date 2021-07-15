@@ -1,11 +1,7 @@
 import { FC } from 'react';
-import { CharacterType } from '../types';
+import { SingleCharacterProps } from '../types';
 
-type CharacterProps = {
-  character: CharacterType;
-}
-
-const Character: FC<CharacterProps> = ({ character }) => {
+const Character: FC<SingleCharacterProps> = ({ character }) => {
   return (
     <tr>
       <td data-column="Character"> 
