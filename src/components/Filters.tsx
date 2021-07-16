@@ -1,12 +1,12 @@
 import { FC, Dispatch, SetStateAction } from 'react';
 
-type FilterProps = {
+type FilterTypes = {
   handleSelect: (value: any) => void;
   setSearchTerm: Dispatch<SetStateAction<string>>;
   gender: string;
 }
 
-const Filters: FC<FilterProps> = ({ setSearchTerm, handleSelect, gender }) => {
+const Filters: FC<FilterTypes> = ({ setSearchTerm, handleSelect, gender }) => {
   return (
     <div className="filter__wrapper">
       <div className="search-filter">

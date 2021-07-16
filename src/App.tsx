@@ -3,6 +3,7 @@ import './stylesheets/scss/global.scss';
 import { Switch, Route } from "react-router-dom";
 import CharacterTable from './components/CharacterTable';
 import House from './components/House';
+import PaginationDropdown from './components/PaginationDropdown';
 import { ICharacter, IHouse } from './types';
 import { PulseLoader } from 'react-spinners';
 import { css } from '@emotion/react';
@@ -61,24 +62,14 @@ const App: FC = () => {
             color='#3498db' 
           /> :
           <div className="App">
-            <div className="pagination-dropdown-filter">
-              <div className="container">
-                <select 
-                  className="dropdown-filter"  
-                  name="pagination-filter"
-                  onChange={handlePagination}
-                  value={pageSize}
-                >
-                  <option value="25">25</option>
-                  <option value="10">10</option>
-                  <option value="50">50</option>
-                </select>
-              </div>
-            </div>
-        
             <main className="content">
               <Switch>
                 <Route exact path="/">
+                  <PaginationDropdown 
+                    pageSize={pageSize}
+                    handlePagination={handlePagination}
+                  />
+
                   <CharacterTable 
                     characters={characters} 
                     houses={houses}
