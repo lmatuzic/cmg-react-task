@@ -2,7 +2,8 @@ import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { SingleCharacterProps } from '../types';
 
-const Character: FC<SingleCharacterProps> = ({ character }) => {
+
+const Character: FC<SingleCharacterProps> = ({ character}) => {
   return (
     <tr>
       <td data-column="Character"> 
@@ -22,7 +23,7 @@ const Character: FC<SingleCharacterProps> = ({ character }) => {
       </td>
 
       <td data-column="Culture">
-        {character.culture === "" ? "Unknown" : character.culture}
+        {character.culture === "" ? (character.culture = "Unknown") : character.culture}
       </td>
 
       <td data-column="Allegiances">

@@ -1,12 +1,21 @@
 import { FC } from 'react';
 import Character from '../components/Character';
-import { CharacterProps } from '../types';
+import { ICharacter, IHouse } from '../types';
 
-const CharacterTableBody: FC<CharacterProps> = ({ characters, houses }) => {
+type CharacterProps = {
+  characters: ICharacter[];
+  houses: IHouse[];
+  searchTerm: string;
+  gender: string;
+}
+
+const CharacterTableBody: FC<CharacterProps> = ({ characters, searchTerm, gender }) => {
   return (
     <tbody>
       {
-        characters.map((character, index) => (
+        characters.filter(character => (
+          character.culture.toLowerCase().includes(searchTerm.toLowerCase()) && character.gender.includes(gender)
+        )).map((character, index) => (
           <Character 
             key={index}
             character={character}
