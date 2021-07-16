@@ -2,7 +2,7 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 5rem;
+  margin: 5rem 0;
 }
 table tr:nth-of-type(odd) {
   background: #eee;
@@ -16,6 +16,22 @@ table td, table th {
   padding: 1rem;
   border: 1px solid #ccc;
   text-align: left;
+}
+table td a {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: color 0.25s ease;
+  color: #3498db;
+}
+table td a:last-child {
+  margin-bottom: 0;
+}
+table td a:visited {
+  color: #3498db;
+}
+table td a:hover {
+  color: #1d6fa5;
 }
 
 @media only screen and (max-width: 800px) {
@@ -44,10 +60,37 @@ table td, table th {
     content: attr(data-column);
     left: 1rem;
     width: 35%;
-    color: #000;
+    color: #141414;
     font-weight: bold;
   }
 }
+button {
+  border: 1px solid #a39d9d;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  padding: 0.75rem 1.25rem;
+  background-color: #f8f5f5;
+  transition: background-color 0.25s ease;
+}
+button:hover {
+  background-color: #f4efef;
+}
+
+.back-button {
+  margin-top: 5rem;
+}
+
+.house__detail {
+  margin-top: 2rem;
+}
+.house__detail strong {
+  font-size: 1.25rem;
+}
+.house__detail > div {
+  margin-top: 0.5rem;
+}
+
 html {
   overflow-y: scroll;
 }

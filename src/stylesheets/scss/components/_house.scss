@@ -1,0 +1,13 @@
+.house {
+  &__detail {
+    margin-top: 2rem;
+
+    strong {
+      font-size: 1.25rem;
+    }
+
+    & > div {
+      margin-top: 0.5rem;
+    }
+  }
+}

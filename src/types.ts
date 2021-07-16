@@ -1,4 +1,4 @@
-export type CharacterType = {
+export interface ICharacter {
   url: string;
   name: string;
   gender: string;
@@ -19,12 +19,12 @@ export type CharacterType = {
   playedBy: string[];
 }
 
-export type HouseType = {
+export interface IHouse {
   url: string;
   name: string;
   region: string;
   coatOfArms:	string;
-  words:	string;
+  words: string;
   titles: string[];
   seats: string[];
   currentLord: string;
@@ -36,4 +36,25 @@ export type HouseType = {
   ancestralWeapons: string;
   cadetBranches: string;
   swornMembers: string;
+}
+
+export type CharacterProps = {
+  characters: ICharacter[];
+  houses: IHouse[];
+}
+
+export type SingleCharacterProps = {
+  character: ICharacter;
+}
+
+export type HouseProps = {
+  houses: IHouse[];
+}
+
+export type SingleHouseProps = {
+  house: IHouse | undefined | null;
+}
+
+export interface ParamTypes {
+  id: string;
 }
