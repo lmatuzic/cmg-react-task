@@ -102,12 +102,24 @@ select {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 5rem;
+  margin-top: 2rem;
+}
+@media (max-width: 576px) {
+  .filter__wrapper {
+    flex-direction: column;
+  }
+  .filter__wrapper .search-filter {
+    margin-bottom: 2rem;
+  }
 }
 .filter__wrapper .caption {
   margin-top: 0.5rem;
   font-size: 12px;
   color: #a39d9d;
+}
+
+.pagination-dropdown-filter {
+  margin-top: 5rem;
 }
 
 .house__detail {

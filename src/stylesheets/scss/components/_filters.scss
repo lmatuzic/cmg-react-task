@@ -5,7 +5,15 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 5rem;
+    margin-top: 2rem;
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+
+      .search-filter {
+        margin-bottom: 2rem;
+      }
+    }  
 
     .caption {
       margin-top: 0.5rem;

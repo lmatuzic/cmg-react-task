@@ -22,6 +22,7 @@ const Filters: FC<FilterProps> = ({ setSearchTerm, handleSelect, gender }) => {
         className="dropdown-filter" 
         value={gender} 
         onChange={handleSelect}
+        name="gender-filter"
       >
         <option value="">All</option>
         <option value="Male">Male</option>

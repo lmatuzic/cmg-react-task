@@ -17,8 +17,9 @@ const App: FC = () => {
   const [characters, setCharacters] = useState<ICharacter[]>([]);
   const [houses, setHouses] = useState<IHouse[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const charactersURL = "https://www.anapioficeandfire.com/api/characters?pageSize=50";
-  const housesURL = "https://www.anapioficeandfire.com/api/houses?pageSize=50";
+  const [pageSize, setPageSize] = useState(25)
+  const charactersURL = `https://www.anapioficeandfire.com/api/characters?pageSize=${pageSize}`;
+  const housesURL = `https://www.anapioficeandfire.com/api/houses?pageSize=${pageSize}`;
 
   useEffect(() => {
     setIsLoading(true);
@@ -44,7 +45,11 @@ const App: FC = () => {
     return () => {
       abortController.abort();
     }
-  }, []);
+  }, [charactersURL, housesURL]);
+
+  const handlePagination = (e: any) => {
+    setPageSize(e.target.value);
+  };
 
   return (
     <>
@@ -56,6 +61,21 @@ const App: FC = () => {
             color='#3498db' 
           /> :
           <div className="App">
+            <div className="pagination-dropdown-filter">
+              <div className="container">
+                <select 
+                  className="dropdown-filter"  
+                  name="pagination-filter"
+                  onChange={handlePagination}
+                  value={pageSize}
+                >
+                  <option value="25">25</option>
+                  <option value="10">10</option>
+                  <option value="50">50</option>
+                </select>
+              </div>
+            </div>
+        
             <main className="content">
               <Switch>
                 <Route exact path="/">
