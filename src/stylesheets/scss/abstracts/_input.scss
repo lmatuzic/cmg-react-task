@@ -1,0 +1,8 @@
+@use './colors' as color;
+
+input {
+  border: 1px solid color.$gray;
+  border-radius: 4px;
+  padding: 0.75rem;
+  outline: none;
+}

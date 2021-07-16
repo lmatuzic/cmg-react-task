@@ -1,4 +1,6 @@
-const CharacterTableHeader = () => {
+import { FC } from 'react';
+
+const CharacterTableHeader: FC = () => {
   return (
     <thead>
       <tr>
