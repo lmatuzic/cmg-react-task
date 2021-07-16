@@ -6,7 +6,7 @@ table {
   margin: 5rem 0;
 
   tr:nth-of-type(odd) { 
-    background: #eee; 
+    background: color.$baby-gray; 
   }
 
   th { 
@@ -27,6 +27,7 @@ table {
       text-decoration: none;
       margin-bottom: 0.5rem;
       transition: color 0.25s ease;
+      color: color.$blue;
 
       &:last-child {
         margin-bottom: 0;

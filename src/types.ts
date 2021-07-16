@@ -36,7 +36,6 @@ export interface IHouse {
   ancestralWeapons: string;
   cadetBranches: string;
   swornMembers: string;
-  house: string;
 }
 
 export type CharacterProps = {
@@ -50,6 +49,10 @@ export type SingleCharacterProps = {
 
 export type HouseProps = {
   houses: IHouse[];
+}
+
+export type SingleHouseProps = {
+  house: IHouse | undefined | null;
 }
 
 export interface ParamTypes {
