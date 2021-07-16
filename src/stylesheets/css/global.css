@@ -33,6 +33,9 @@ table td a:visited {
 table td a:hover {
   color: #1d6fa5;
 }
+table .alive-column {
+  white-space: pre;
+}
 
 @media only screen and (max-width: 800px) {
   table, thead, tbody, th, td, tr {
