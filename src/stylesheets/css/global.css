@@ -81,6 +81,35 @@ button:hover {
   margin-top: 5rem;
 }
 
+input {
+  border: 1px solid #a39d9d;
+  border-radius: 4px;
+  padding: 0.75rem;
+  outline: none;
+}
+
+select {
+  outline: none;
+  box-shadow: none;
+  padding: 0.75rem 0;
+  border: 1px solid #a39d9d;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.filter__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 5rem;
+}
+.filter__wrapper .caption {
+  margin-top: 0.5rem;
+  font-size: 12px;
+  color: #a39d9d;
+}
+
 .house__detail {
   margin-top: 2rem;
 }

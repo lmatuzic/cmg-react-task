@@ -22,13 +22,16 @@ const CharacterTable: FC<CharacterProps> = ({ characters, houses }) => {
     <div className="characters__table">
       <div className="container">
         <div className="filter__wrapper">
-          <input 
-            type="text" 
-            placeholder="Search"
-            onChange={e => setSearchTerm(e.target.value)}
-          />
+          <div className="search-filter">
+            <input 
+              type="text" 
+              placeholder="Search"
+              onChange={e => setSearchTerm(e.target.value)}
+            />
+            <div className="caption">Search by culture</div>
+          </div>
 
-          <select value={gender} onChange={handleSelect}>
+          <select className="dropdown-filter" value={gender} onChange={handleSelect}>
             <option value="">All</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>

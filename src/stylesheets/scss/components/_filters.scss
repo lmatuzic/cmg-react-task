@@ -1,0 +1,16 @@
+@use '../abstracts';
+
+.filter {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 5rem;
+
+    .caption {
+      margin-top: 0.5rem;
+      font-size: 12px;
+      color: abstracts.$gray;
+    }
+  }
+}
