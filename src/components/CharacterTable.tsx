@@ -2,42 +2,24 @@ import { FC, useState } from 'react';
 import { CharacterProps } from '../types';
 import CharacterTableHeader from './CharacterTableHeader';
 import CharacterTableBody from './CharacterTableBody';
+import Filters from './Filters';
 
 const CharacterTable: FC<CharacterProps> = ({ characters, houses }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [gender, setGender] = useState('');
+  const [gender, setGender] = useState("");
 
   const handleSelect = (e: any) => {
     setGender(e.target.value);
   };
 
-  const filteredGender = characters.filter(character => (
-      character.gender.includes(gender)
-    )
-  );
-
-  console.log(filteredGender);
-
   return (
     <div className="characters__table">
       <div className="container">
-        <div className="filter__wrapper">
-          <div className="search-filter">
-            <input 
-              type="text" 
-              placeholder="Search"
-              onChange={e => setSearchTerm(e.target.value)}
-            />
-            <div className="caption">Search by culture</div>
-          </div>
-
-          <select className="dropdown-filter" value={gender} onChange={handleSelect}>
-            <option value="">All</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Unknown">Unknown</option>
-          </select>
-        </div>
+        <Filters 
+          setSearchTerm={setSearchTerm}
+          gender={gender}
+          handleSelect={handleSelect}
+        />
 
         <table>
           <CharacterTableHeader />
